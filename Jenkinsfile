@@ -8,22 +8,22 @@ p4ipeline {
 			}
 			stage('initialise tf') {
 				steps {
-				sh 'terraform init'
+				sh 'cd terraform && terraform init'
 				}
 			}
 			stage('validate') {
 				steps {
-				sh 'terraform validate'
+				sh 'cd terraform && terraform validate'
 				}
 			}
 			stage('plan') {
 				steps {
-				sh 'terraform plan'
+				sh 'cd terraform && terraform plan'
 				}
 			}
 			stage('apply') {
 				steps {
-				sh 'terraform apply -auto-approve'
+				sh 'cd terraform && terraform apply -auto-approve'
 				}
 			}
 		}
