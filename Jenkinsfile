@@ -14,7 +14,7 @@ pipeline {
 			}
 			stage('initialise tf') {
 				steps {
-				sh 'cd terraform && terraform init'
+				sh 'cd terraform && terraform init -upgrade'
 				}
 			}
 			stage('validate') {
