@@ -7,11 +7,13 @@ pipeline {
         ARM_SUBSCRIPTION_ID = credentials('ARM_SUBSCRIPTION_ID')
     } 
 		stages {
-			stage('clean') {
-				steps {
-					sh 'cd terraform && rm -rf .terraform && rm -f .terraform.lock.hcl'
-				}
-			}
+			stage('Debug ENV') {
+    steps {
+        sh '''
+          env | grep ARM
+        '''
+    }
+}
 			stage('checkout') {
 				steps {
 				git branch: 'master', url: 'https://github.com/mallikarjunkolur/tf_integration.git'
