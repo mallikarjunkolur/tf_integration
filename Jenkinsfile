@@ -9,7 +9,7 @@ pipeline {
 		stages {
 			stage('clean') {
 				steps {
-					sh 'cd terraform && rm -rf .terraform && rm -f .terraform.lock.hcl
+					sh 'cd terraform && rm -rf .terraform && rm -f .terraform.lock.hcl'
 				}
 			}
 			stage('checkout') {
