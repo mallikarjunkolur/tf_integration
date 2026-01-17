@@ -74,7 +74,7 @@ resource "azurerm_ssh_public_key" "sshk" {
   name                = "sshk"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
-  public_key          = file("~/.ssh/id_rsa.pub")
+  public_key          = file("/var/lib/jenkins/id_rsa.pub")
 }
 
 resource "azurerm_linux_virtual_machine" "vm" {
@@ -89,7 +89,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
 
   admin_ssh_key {
     username   = "adminuser"
-    public_key = file("~/.ssh/id_rsa.pub")
+    public_key = file("/var/lib/jenkins/id_rsa.pub")
   }
 
   os_disk {
