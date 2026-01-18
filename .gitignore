@@ -1,0 +1,9 @@
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+
+# SSH keys (optional safety)
+*.pem
+*.key
